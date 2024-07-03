@@ -1,14 +1,13 @@
 function displayTimeAndDay() {
-            const now = new Date();
 
             // Display current time in UTC
-            const utcTime = now.toISOString().slice(11, 19);
-            document.getElementById('time').textContent = utcTime;
+            const utc = new Date().toLocaleTimeString();
+            document.getElementById('time').textContent = utc;
 
             // Display current day of the week
-            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const dayOfWeek = daysOfWeek[now.getUTCDay()];
-            document.getElementById('day').textContent = dayOfWeek;
+            const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayOfTheWeek = daysOfTheWeek[new Date().getUTCDay()];
+            document.getElementById('day').textContent = dayOfTheWeek;
         }
         // Generate a random number between 1 and 100
         displayTimeAndDay();
